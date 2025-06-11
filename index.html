@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Renan Felizardo - Desenvolvedor Frontend especializado em React, JavaScript e desenvolvimento web moderno" />
+    <title>Renan Felizardo | Frontend Developer</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script src="config/tailwind.config.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  
+  <body class="bg-slate-900 text-gray-100">
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-5 left-[10%] w-[80%] z-50 transition-all duration-300 bg-background-dark/70 backdrop-blur-md border border-white/20 rounded-[30px] px-6 py-4 bg-slate-950/80">
+      <div class="flex justify-between items-center">
+        <a href="#home" class="flex items-center space-x-2">
+          <div class="text-2xl font-semibold">
+            <span class="text-white">Renan</span>
+            <span class="gradient-pipe"> | Dev</span>
+          </div>
+        </a>
+        
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link text-base font-medium transition-colors duration-300 text-primary-500">Início</a>
+          <a href="#about" class="nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Sobre</a>
+          <a href="#services" class="nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Serviços</a>
+          <a href="#projects" class="nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Projetos</a>
+          <a href="#contact" class="nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Contato</a>
+        </nav>
+        
+        <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-primary-500 transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      
+      <div id="mobileMenu" class="md:hidden bg-background-dark/95 backdrop-blur-sm mt-4 hidden">
+        <nav class="flex flex-col space-y-4 py-4">
+          <a href="#home" class="mobile-nav-link text-base font-medium transition-colors duration-300 text-primary-500">Início</a>
+          <a href="#about" class="mobile-nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Sobre</a>
+          <a href="#services" class="mobile-nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Serviços</a>
+          <a href="#projects" class="mobile-nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Projetos</a>
+          <a href="#contact" class="mobile-nav-link text-base font-medium transition-colors duration-300 text-white hover:text-primary-500">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center pl-40 pb-16">
+        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left px-32">
+          <!-- Left Column - Text Content -->
+          <div class="fade-in-left text-center lg:text-left">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <span class="text-primary-500">Olá, sou Renan Felizardo</span>
+            </h2>
+            <div class="w-max mx-auto lg:mx-0">
+              <h3 class="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-2 text-2xl md:text-3xl text-gray-300 mb-8 font-bold">
+                Desenvolvedor Frontend
+              </h3>
+            </div>
+            
+            <div class="flex justify-center lg:justify-start">
+              <div class="redes flex space-x-4 justify-center lg:justify-start">
+                <a href="https://github.com/renan-dev-dev" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/renan-felizardo/" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#contact" class="bn31 px-2 border-b-2 border-t-2">
+                <span class="bn31span">Contato</span>
+              </a>
+              <a href="#projects" class="bn31 px-2">
+                <span class="bn31span">Projetos</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Right Column - Image -->
+          <div class="fade-in-scale flex justify-center">
+            <div class="relative morph-colors morph-colors::before">
+              <div class="hero-image w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-500/30 animate-float">
+                <img src="assets/fewsgsw.jpg" alt="Developer profile" class="w-full h-full object-cover">
+              </div>
+              
+              <!--<div class="hero-background-circles absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                <div class="hero-image-inner-ring w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-primary-500/30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 bg-gray-950/50">
+        <div class="container">
+          <h2 class="section-title pb-4 mb-16 text-4xl">Sobre mim</h2>
+          
+          <div class="fade-in-left max-w-6xl mx-auto">
+            <p class="mb-10 pt-6 text-gray-300 leading-relaxed text-2xl">
+              Domino as principais tecnologias do front-end: HTML, CSS, JavaScript, React e Tailwind CSS, aplicando conceitos de estruturação semântica, responsividade, além de animações e interações para criar experiências mais dinâmicas e atrativas.
+            </p>
+            
+            <p class="mb-10 text-gray-300 leading-relaxed text-2xl">
+              Tenho foco em UI/UX, buscando sempre desenvolver interfaces intuitivas, acessíveis e agradáveis, que proporcionem uma experiência positiva ao usuário em cada interação.
+            </p>
+
+            <p class="mb-10 text-gray-300 leading-relaxed text-2xl">
+              Utilizo JavaScript e React para desenvolver funcionalidades como manipulação de elementos na página, integração com APIs, efeitos visuais e componentes interativos. Com o Tailwind CSS, consigo estilizar interfaces de forma ágil e consistente, garantindo um design moderno e responsivo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-20 bg-background-dark/50">
+        <div class="container">
+          <h2 class="section-title pb-4 mb-16 text-4xl">Serviços</h2>
+          
+          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[900px] mx-auto justify-items-center">
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="layers" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                Landing Pages
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Criação de páginas únicas com foco em conversão, ideais para promoções, produtos ou apresentações de serviços. Design moderno e compatível com todos os dispositivos.
+              </p>
+            </div>
+
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="monitor-smartphone" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                Sites institucionais
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Criação de sites simples para empresas, portfólios ou marcas pessoais. Navegação fluida, conteúdo bem distribuído e visual alinhado à identidade do cliente.
+              </p>
+            </div>
+
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="pen-tool" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                UI/UX Design com Foco em Performance
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Criação de interfaces baseadas em boas práticas de usabilidade, com foco em carregamento rápido, acessibilidade e experiência fluida.
+              </p>
+            </div>
+
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="puzzle" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                Projetos em React com Tailwind CSS
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Criação de interfaces modernas com React e Tailwind CSS, usando componentes reutilizáveis, animações e interações dinâmicas.
+              </p>
+            </div>
+
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="atom" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                Funcionalidades com JavaScript
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Adição de interações como menus, sliders, animações suaves e validação de formulários para tornar o site mais dinâmico e funcional.
+              </p>
+            </div>
+
+            <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
+              <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
+                <i data-lucide="code-2" class="w-9 h-9"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 group-hover:text-primary-500 transition-colors">
+                Componentes Dinâmicos com React
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Desenvolvo componentes reutilizáveis, formulários e filtros dinâmicos. Utilizo hooks e integro APIs para criar interfaces modernas e funcionais.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="py-20 bg-gray-950/50">
+        <div class="container">
+          <h2 class="section-title pb-4 mb-16 text-4xl">Projetos</h2>
+          
+          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1000px] justify-items-center mx-auto">
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/bi.jpg" alt="Site Bikcraft" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/Bikcraft/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site Bikcraft
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Página inicial com design moderno, layout escuro e foco em bicicletas personalizadas.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">CSS</span>
+                
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/Bikcraft/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/forest.jpg" alt="Site Forest" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/Forest/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site Forest
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Site de turismo na floresta feito com Tailwind. Design moderno com navegação fluida e foco em reservas e experiências.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Tailwind CSS</span>
+        
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/Forest/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/dogs.jpg" alt="Site Dogs" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/Dogs/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site Dogs
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Rede social canina feita com React, permitindo upload e compartilhamento de fotos dos pets com sistema de curtidas e navegação fluida entre imagens.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">CSS</span>
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/Dogs/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/ani.jpg" alt="Site Animais Fantásticos" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/Animais/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site Animais Fantásticos
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Página com visual limpo e elegante, dedicada à apresentação de curiosidades sobre animais selvagens.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+                
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/Animais/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/novushaus.jpg" alt="Site NovusHaus" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/NovusHaus/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site NovusHaus
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Elegância Redefinida em Móveis de Luxo.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/NovusHaus/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/dec...jpg" alt="Landing Page" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/decbase/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Landing Page
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Landing page elegante para empresa de design de interiores.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/decbase/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+
+            <div class="card overflow-hidden group h-full flex flex-col">
+              <div class="relative overflow-hidden rounded-lg mb-4">
+                <img src="assets/sge.jpg" alt="Site Nexora" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="https://renan-dev-dev.github.io/Nexora/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold mb-2 group-hover:text-primary-500 transition-colors">
+                Site Nexora
+              </h3>
+              
+              <p class="text-gray-400 mb-4 flex-grow">
+                Interface moderna e responsiva para apresentação de produtos e serviços com foco em experiências web profissionais.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
+                
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+              </div>
+              
+              <a href="https://renan-dev-dev.github.io/Nexora/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+                Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-20 bg-background-dark/50">
+        <div class="container">
+          <h2 class="section-title pb-4 mb-16 text-4xl">Contato</h2>
+          
+          <div class="max-w-3xl mx-auto">
+            <div class="fade-in-up card">
+              <div id="successMessage" class="bg-green-800/20 text-green-400 p-4 rounded-lg flex items-center justify-center space-x-2 mb-6 hidden">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+                <span>✅ Obrigado! Entrarei em contato em breve.</span>
+              </div>
+              
+              <form id="contactForm" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">
+                      Nome
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-4 py-2 bg-background-dark border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-2 bg-background-dark border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-300 mb-1">
+                    Mensagem
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    class="w-full px-4 py-2 bg-background-dark border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  class="bn31 w-full px-2"
+                >
+                  <span class="bn31span flex items-center justify-center px-2">
+                    <i data-lucide="send" class="w-4 h-4 mr-2"></i>
+                    Enviar mensagem
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 py-10 mt-10 ">
+      <div class="container px-36">
+        <div class="flex flex-col md:flex-row justify-between items-center mx-32">
+          <div class="mb-6 md:mb-0">
+            <div class="text-xl font-bold mb-2">
+              <span class="text-white">Renan</span>
+              <span class="text-primary-500"> | Dev</span>
+            </div>
+            <p class="text-gray-400">Desenvolvedor Frontend</p>
+          </div>
+          
+          <div class="flex space-x-4 mb-6 md:mb-0">
+            <a href="https://github.com/renan-dev-dev" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/renan-felizardo/" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+          
+          <button
+            id="scrollToTop"
+            class="bg-primary-500 text-white p-3 rounded-full hover:bg-primary-600 transition-colors"
+          >
+            <i data-lucide="arrow-up" class="w-5 h-5"></i>
+          </button>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; <span id="currentYear"></span> Renan Felizardo. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/particles.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

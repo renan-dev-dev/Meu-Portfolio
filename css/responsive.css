@@ -1,0 +1,114 @@
+/* Responsividade para dispositivos móveis */
+@media (max-width: 390px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .bn31 {
+    font-size: 1.2em;
+    height: 45px;
+    margin: 0 auto;
+  }
+
+  /* Foto menor em dispositivos pequenos */
+  .hero-image {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .hero-image-outer-ring {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .hero-image-inner-ring {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* Ajuste da seção hero para não sobrepor */
+  #home {
+    padding-bottom: 4rem !important;
+    margin-bottom: 2rem;
+  }
+
+  /* Ajuste específico para a imagem descer em mobile */
+  .fade-in-scale {
+    margin-top: 3rem !important;
+  }
+
+  /* Ajuste do grid para melhor espaçamento */
+  #home .container {
+    gap: 2rem !important;
+  }
+}
+
+@media (min-width: 391px) and (max-width: 767px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .bn31 {
+    margin: 0 auto;
+  }
+
+  /* Foto menor em tablets pequenos */
+  .hero-image {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .hero-image-outer-ring {
+    width: 240px !important;
+    height: 240px !important;
+  }
+
+  .hero-image-inner-ring {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  /* Ajuste da seção hero para não sobrepor */
+  #home {
+    padding-bottom: 4rem !important;
+    margin-bottom: 2rem;
+  }
+
+  /* Ajuste específico para a imagem descer em tablets pequenos */
+  .fade-in-scale {
+    margin-top: 2rem !important;
+  }
+
+  /* Ajuste do grid para melhor espaçamento */
+  #home .container {
+    gap: 1.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  /* Ajuste da seção hero para tablets */
+  #home {
+    padding-bottom: 3rem;
+  }
+
+  /* Pequeno ajuste para tablets médios */
+  .fade-in-scale {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Ajuste da seção hero para desktop */
+  #home {
+    padding-bottom: 2rem;
+  }
+
+  /* Reset do margin-top para desktop */
+  .fade-in-scale {
+    margin-top: 0;
+  }
+}

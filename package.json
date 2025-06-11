@@ -1,0 +1,17 @@
+{
+  "name": "renan-portfolio",
+  "version": "1.0.0",
+  "description": "Renan's Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -s . -l 5173",
+    "start": "npx serve -s . -l 5173",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "keywords": ["portfolio", "website"],
+  "author": "Renan",
+  "license": "MIT"
+}
