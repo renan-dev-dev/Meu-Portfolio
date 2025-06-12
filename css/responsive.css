@@ -1,114 +1,200 @@
-/* Responsividade para dispositivos móveis */
-@media (max-width: 390px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
+/* iPhone 14 Pro (393px) */
+@media (max-width: 393px) {
   
-  .bn31 {
-    font-size: 1.2em;
-    height: 45px;
-    margin: 0 auto;
-  }
-
-  /* Foto menor em dispositivos pequenos */
+  
   .hero-image {
     width: 180px !important;
     height: 180px !important;
-  }
-
-  .hero-image-outer-ring {
-    width: 200px !important;
-    height: 200px !important;
-  }
-
-  .hero-image-inner-ring {
-    width: 220px !important;
-    height: 220px !important;
-  }
-
-  /* Ajuste da seção hero para não sobrepor */
-  #home {
-    padding-bottom: 4rem !important;
-    margin-bottom: 2rem;
-  }
-
-  /* Ajuste específico para a imagem descer em mobile */
-  .fade-in-scale {
-    margin-top: 3rem !important;
-  }
-
-  /* Ajuste do grid para melhor espaçamento */
-  #home .container {
-    gap: 2rem !important;
-  }
-}
-
-@media (min-width: 391px) and (max-width: 767px) {
-  .section-title {
-    font-size: 1.5rem;
+    margin-top: 60px;
+    margin-bottom: 20px;
   }
   
-  .bn31 {
-    margin: 0 auto;
+
+  .morph-colors::before{
+
+    margin-top: 60px;
+    margin-bottom: 20px;
   }
 
-  /* Foto menor em tablets pequenos */
-  .hero-image {
-    width: 220px !important;
-    height: 220px !important;
+  .animate-typing {
+    font-size: 1.2rem;
+    
+    text-align: center;
   }
 
-  .hero-image-outer-ring {
-    width: 240px !important;
-    height: 240px !important;
-  }
-
-  .hero-image-inner-ring {
-    width: 260px !important;
-    height: 260px !important;
-  }
-
-  /* Ajuste da seção hero para não sobrepor */
-  #home {
-    padding-bottom: 4rem !important;
-    margin-bottom: 2rem;
-  }
-
-  /* Ajuste específico para a imagem descer em tablets pequenos */
-  .fade-in-scale {
-    margin-top: 2rem !important;
-  }
-
-  /* Ajuste do grid para melhor espaçamento */
   #home .container {
-    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .fade-in-left h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .bn31 {
+    width: 100%;
+    max-width: 180px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .section-title {
-    font-size: 1.875rem;
+/* iPhone 14 Pro Max (430px) */
+@media (min-width: 394px) and (max-width: 480px) {
+   .hero-image {
+    width: 180px !important;
+    height: 180px !important;
+    margin-top: 60px;
+    
+  }
+  
+
+  .morph-colors::before{
+
+    margin-top: 60px;
+    
   }
 
-  /* Ajuste da seção hero para tablets */
-  #home {
-    padding-bottom: 3rem;
+  .animate-typing {
+    font-size: 1.2rem;
+    
+    text-align: center;
   }
 
-  /* Pequeno ajuste para tablets médios */
-  .fade-in-scale {
-    margin-top: 1rem;
+  .fade-in-left h2 {
+    font-size: 1.6rem !important;
+  }
+  
+}
+
+/* Pixel 7 Pro (480px) */
+@media (min-width: 431px) and (max-width: 500px) {
+   .hero-image {
+    width: 180px !important;
+    height: 180px !important;
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+
+  .morph-colors::before{
+
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .animate-typing {
+    font-size: 1.2rem;
+    
+    text-align: center;
+  }
+
+  .fade-in-left h2 {
+    font-size: 1.7rem !important;
   }
 }
 
-@media (min-width: 1024px) {
-  /* Ajuste da seção hero para desktop */
-  #home {
-    padding-bottom: 2rem;
+/* iPad Air 5 (820px) */
+@media (min-width: 768px) and (max-width: 840px) {
+   .hero-image {
+    width: 180px !important;
+    height: 180px !important;
+    margin-top: 60px;
+    
+  }
+  
+
+  .morph-colors::before{
+
+    margin-top: 60px;
+    
   }
 
-  /* Reset do margin-top para desktop */
-  .fade-in-scale {
-    margin-top: 0;
+  .animate-typing {
+    font-size: 1.6rem;
+    
   }
+
+  .fade-in-left h2 {
+    font-size: 2.2rem !important;
+  }
+}
+/* Responsividade do zero baseada no HTML do usuário */
+
+/* iPhone 14 Pro (393px) */
+@media (max-width: 393px) {
+  .center {
+    padding-top: 7rem;
+  }
+
+  .fade-in-left h2 {
+    font-size: 2rem;
+  }
+
+  .animate-typing {
+    font-size: 1.25rem;
+  }
+}
+
+/* iPhone 14 Pro Max (430px) */
+@media (min-width: 394px) and (max-width: 430px) {
+  .center {
+    padding-top: 7rem;
+  }
+
+  .fade-in-left h2 {
+    font-size: 2.125rem;
+  }
+
+  .animate-typing {
+    font-size: 1.3rem;
+  }
+}
+
+/* Pixel 7 Pro (480px) */
+@media (min-width: 431px) and (max-width: 480px) {
+  .center {
+    padding-top: 7rem;
+  }
+
+  .fade-in-left h2 {
+    font-size: 2.25rem;
+  }
+
+  .animate-typing {
+    font-size: 1.4rem;
+  }
+}
+
+/* iPad Air 5 (820px) */
+@media (min-width: 768px) and (max-width: 840px) {
+  .center {
+    padding-top: 7rem;
+  }
+
+  .fade-in-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .animate-typing {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 300px) and (max-width: 400px){
+.bn32 {
+    
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1559px) and (max-width: 975px){
+.tela-grande{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+}
+
+
+@media (min-width: 825px) and (max-width: 1180px){
+  .tela-grande{
+  margin-top: 0;
+  margin-bottom: 0;
+}
 }
