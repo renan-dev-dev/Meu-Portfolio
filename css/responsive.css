@@ -1,410 +1,114 @@
-/* Responsividade para dispositivos específicos */
-
-/* iPhone 14 Pro - 393x852 */
-@media (max-width: 393px) and (max-height: 852px) {
+/* Responsividade para dispositivos móveis */
+@media (max-width: 390px) {
   .section-title {
     font-size: 1.5rem;
   }
   
-  /* Navbar ajustado */
-  #navbar {
-    left: 5%;
-    width: 90%;
-    padding: 0.75rem 1rem;
-  }
-  
-  /* Hero section ajustada */
-  #home {
-    padding-left: 0;
-    padding-bottom: 3rem;
-    min-height: 100vh;
-  }
-  
-  #home .container {
-    padding: 0 1rem;
-    gap: 2rem;
-  }
-  
-  /* Texto do hero */
-  .fade-in-left h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  
-  .fade-in-left h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Botões do hero - mesma proporção */
   .bn31 {
-    font-size: 1rem;
-    height: 40px;
-    min-width: 6em;
+    font-size: 1.2em;
+    height: 45px;
+    margin: 0 auto;
   }
-  
-  .bn31 .bn31span {
-    padding: 0 1rem;
-  }
-  
-  /* Imagem do hero menor */
-  .hero-image {
-    width: 160px !important;
-    height: 160px !important;
-  }
-  
-  /* Ajuste da seção sobre */
-  #about .container {
-    padding: 0 1rem;
-  }
-  
-  #about p {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Cards de serviços */
-  .services-box {
-    padding: 1.5rem;
-    max-width: 100%;
-  }
-  
-  /* Cards de projetos */
-  .card {
-    padding: 1rem;
-  }
-  
-  /* Footer */
-  footer .container {
-    padding: 0 1rem;
-  }
-  
-  footer .flex {
-    margin: 0;
-  }
-}
 
-/* iPhone 14 Pro Max - 430x932 */
-@media (min-width: 394px) and (max-width: 430px) and (max-height: 932px) {
-  .section-title {
-    font-size: 1.625rem;
-  }
-  
-  /* Navbar ajustado */
-  #navbar {
-    left: 5%;
-    width: 90%;
-    padding: 0.875rem 1.25rem;
-  }
-  
-  /* Hero section ajustada */
-  #home {
-    padding-left: 0;
-    padding-bottom: 3rem;
-  }
-  
-  #home .container {
-    padding: 0 1.25rem;
-    gap: 2.5rem;
-  }
-  
-  /* Texto do hero */
-  .fade-in-left h2 {
-    font-size: 2.25rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  
-  .fade-in-left h3 {
-    font-size: 1.375rem;
-    margin-bottom: 1.75rem;
-  }
-  
-  /* Botões do hero - mesma proporção */
-  .bn31 {
-    font-size: 1.1rem;
-    height: 42px;
-    min-width: 6.5em;
-  }
-  
-  .bn31 .bn31span {
-    padding: 0 1.25rem;
-  }
-  
-  /* Imagem do hero */
+  /* Foto menor em dispositivos pequenos */
   .hero-image {
     width: 180px !important;
     height: 180px !important;
   }
-  
-  /* Ajuste da seção sobre */
-  #about .container {
-    padding: 0 1.25rem;
-  }
-  
-  #about p {
-    font-size: 1.25rem;
-    margin-bottom: 1.75rem;
-  }
-  
-  /* Cards de serviços */
-  .services-box {
-    padding: 1.75rem;
-    max-width: 100%;
-  }
-  
-  /* Footer */
-  footer .container {
-    padding: 0 1.25rem;
-  }
-  
-  footer .flex {
-    margin: 0;
-  }
-}
 
-/* Pixel 7 Pro - 480x1040 */
-@media (min-width: 431px) and (max-width: 480px) and (max-height: 1040px) {
-  .section-title {
-    font-size: 1.75rem;
-  }
-  
-  /* Navbar ajustado */
-  #navbar {
-    left: 5%;
-    width: 90%;
-    padding: 1rem 1.5rem;
-  }
-  
-  /* Hero section ajustada */
-  #home {
-    padding-left: 0;
-    padding-bottom: 3rem;
-  }
-  
-  #home .container {
-    padding: 0 1.5rem;
-    gap: 3rem;
-  }
-  
-  /* Texto do hero */
-  .fade-in-left h2 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.25rem;
-  }
-  
-  .fade-in-left h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Botões do hero - mesma proporção */
-  .bn31 {
-    font-size: 1.2rem;
-    height: 45px;
-    min-width: 7em;
-  }
-  
-  .bn31 .bn31span {
-    padding: 0 1.5rem;
-  }
-  
-  /* Imagem do hero */
-  .hero-image {
+  .hero-image-outer-ring {
     width: 200px !important;
     height: 200px !important;
   }
-  
-  /* Ajuste da seção sobre */
-  #about .container {
-    padding: 0 1.5rem;
+
+  .hero-image-inner-ring {
+    width: 220px !important;
+    height: 220px !important;
   }
-  
-  #about p {
-    font-size: 1.375rem;
+
+  /* Ajuste da seção hero para não sobrepor */
+  #home {
+    padding-bottom: 4rem !important;
     margin-bottom: 2rem;
   }
-  
-  /* Cards de serviços */
-  .services-box {
-    padding: 2rem;
-    max-width: 100%;
+
+  /* Ajuste específico para a imagem descer em mobile */
+  .fade-in-scale {
+    margin-top: 3rem !important;
   }
-  
-  /* Footer */
-  footer .container {
-    padding: 0 1.5rem;
-  }
-  
-  footer .flex {
-    margin: 0;
+
+  /* Ajuste do grid para melhor espaçamento */
+  #home .container {
+    gap: 2rem !important;
   }
 }
 
-/* iPad Air 5 - 820x1180 (Tablet) */
-@media (min-width: 481px) and (max-width: 820px) and (max-height: 1180px) {
+@media (min-width: 391px) and (max-width: 767px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
-  /* Navbar ajustado */
-  #navbar {
-    left: 7.5%;
-    width: 85%;
-    padding: 1rem 2rem;
-  }
-  
-  /* Hero section ajustada */
-  #home {
-    padding-left: 0;
-    padding-bottom: 4rem;
-  }
-  
-  #home .container {
-    padding: 0 2rem;
-    gap: 4rem;
-  }
-  
-  /* Texto do hero */
-  .fade-in-left h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .fade-in-left h3 {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Botões do hero - mesma proporção */
   .bn31 {
-    font-size: 1.3rem;
-    height: 48px;
-    min-width: 7.5em;
+    margin: 0 auto;
   }
-  
-  .bn31 .bn31span {
-    padding: 0 1.75rem;
-  }
-  
-  /* Imagem do hero */
+
+  /* Foto menor em tablets pequenos */
   .hero-image {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .hero-image-outer-ring {
     width: 240px !important;
     height: 240px !important;
   }
-  
-  /* Ajuste da seção sobre */
-  #about .container {
-    padding: 0 2rem;
+
+  .hero-image-inner-ring {
+    width: 260px !important;
+    height: 260px !important;
   }
-  
-  #about p {
-    font-size: 1.5rem;
+
+  /* Ajuste da seção hero para não sobrepor */
+  #home {
+    padding-bottom: 4rem !important;
     margin-bottom: 2rem;
   }
-  
-  /* Cards de serviços em 2 colunas */
-  .stagger-children {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 700px;
-  }
-  
-  .services-box {
-    padding: 2rem;
-    max-width: 100%;
-  }
-  
-  /* Cards de projetos em 2 colunas */
-  #projects .stagger-children {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 800px;
-  }
-  
-  /* Footer */
-  footer .container {
-    padding: 0 2rem;
-  }
-  
-  footer .flex {
-    margin: 0;
-  }
-}
 
-/* Ajustes gerais para todos os dispositivos móveis */
-@media (max-width: 820px) {
-  /* Remove padding lateral excessivo do desktop */
-  #home {
-    padding-left: 0 !important;
+  /* Ajuste específico para a imagem descer em tablets pequenos */
+  .fade-in-scale {
+    margin-top: 2rem !important;
   }
-  
+
+  /* Ajuste do grid para melhor espaçamento */
   #home .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  /* Footer sem padding excessivo */
-  footer .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  
-  footer .flex {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Menu mobile sempre visível em telas pequenas */
-  #mobileMenuBtn {
-    display: block;
-  }
-  
-  nav {
-    display: none;
-  }
-  
-  /* Centralizar conteúdo do hero */
-  .fade-in-left {
-    text-align: center !important;
-  }
-  
-  .fade-in-left .redes {
-    justify-content: center !important;
-  }
-  
-  .fade-in-left .flex {
-    justify-content: center !important;
+    gap: 1.5rem !important;
   }
 }
 
-/* Ajustes específicos para landscape em dispositivos móveis */
-@media (max-width: 820px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  /* Ajuste da seção hero para tablets */
   #home {
-    min-height: 100vh;
-    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Pequeno ajuste para tablets médios */
+  .fade-in-scale {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Ajuste da seção hero para desktop */
+  #home {
     padding-bottom: 2rem;
   }
-  
-  .fade-in-left h2 {
-    font-size: 1.75rem;
-  }
-  
-  .fade-in-left h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-image {
-    width: 140px !important;
-    height: 140px !important;
-  }
-  
-  .bn31 {
-    height: 35px;
-    font-size: 0.9rem;
+
+  /* Reset do margin-top para desktop */
+  .fade-in-scale {
+    margin-top: 0;
   }
 }
