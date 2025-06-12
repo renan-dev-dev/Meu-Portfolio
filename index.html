@@ -15,13 +15,75 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <!-- Tailwind Configuration -->
-    <script src="config/tailwind.config.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#FFF7ED',
+                100: '#FFEDD5',
+                200: '#FED7AA',
+                300: '#FDBA74',
+                400: '#FB923C',
+                500: '#FF4500',
+                600: '#EA580C',
+                700: '#C2410C',
+                800: '#9A3412',
+                900: '#7C2D12',
+              },
+              background: {
+                dark: '#0F172A',
+                light: '#1E293B',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'typing': 'typing 6s steps(20) infinite, blink .7s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              typing: {
+                '0%': {
+                  width: '0%',
+                  visibility: 'visible'
+                },
+                '33%': {
+                  width: '100%'
+                },
+                '66%': {
+                  width: '100%'
+                },
+                '100%': {
+                  width: '0%'
+                }
+              },
+              blink: {
+                '50%': {
+                  borderColor: 'transparent'
+                },
+                '100%': {
+                  borderColor: 'white'
+                }
+              }
+            },
+          },
+        },
+      }
+    </script>
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/morphing-effects.css">
   </head>
   
   <body class="bg-slate-900 text-gray-100">
@@ -29,7 +91,7 @@
     <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"></canvas>
 
     <!-- Navbar -->
-    <header id="navbar" class="fixed top-5 left-[10%] w-[80%] z-50 transition-all duration-300 bg-background-dark/70 backdrop-blur-md border border-white/20 rounded-[30px] px-6 py-4 bg-slate-950/80">
+    <header id="navbar" class="fixed top-5 left-[10%] w-[80%] z-50 transition-all duration-300 bg-background-dark/70 backdrop-blur-md border border-white/20 rounded-[30px] px-6 py-4">
       <div class="flex justify-between items-center">
         <a href="#home" class="flex items-center space-x-2">
           <div class="text-2xl font-semibold">
@@ -62,10 +124,10 @@
       </div>
     </header>
 
-    <main class="pt-20">
+    <main class="pt-24">
       <!-- Hero Section -->
-      <section id="home" class="min-h-screen flex items-center pl-40 pb-16">
-        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left px-32">
+      <section id="home" class="min-h-screen flex items-center pb-16">
+        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
           <!-- Left Column - Text Content -->
           <div class="fade-in-left text-center lg:text-left">
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -79,10 +141,10 @@
             
             <div class="flex justify-center lg:justify-start">
               <div class="redes flex space-x-4 justify-center lg:justify-start">
-                <a href="https://github.com/renan-dev-dev" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
                   <i data-lucide="github" class="w-5 h-5"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/renan-felizardo/" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="relative flex items-center justify-center w-10 h-10 text-primary-500 border-2 border-primary-500 rounded-full overflow-hidden hover:text-background-dark transition-colors duration-500 group">
                   <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
               </div>
@@ -100,14 +162,15 @@
           
           <!-- Right Column - Image -->
           <div class="fade-in-scale flex justify-center">
-            <div class="relative morph-colors morph-colors::before">
-              <div class="hero-image w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-500/30 animate-float">
-                <img src="assets/fewsgsw.jpg" alt="Developer profile" class="w-full h-full object-cover">
+            <div class="relative">
+              <div class="hero-image w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary-500/40 animate-float">
+                <img src="images/istockphoto-495585527-612x612.jpg" alt="Developer profile" class="w-full h-full object-cover">
               </div>
               
-              <!--<div class="hero-background-circles absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <div class="hero-image-inner-ring w-80 h-80 md:w-96 md:h-96 rounded-full border-2 border-primary-500/30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-              </div>-->
+              <div class="hero-background-circles absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div class="hero-image-outer-ring w-72 h-72 md:w-88 md:h-88 rounded-full border-2 border-primary-500/20 animate-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="hero-image-inner-ring w-80 h-80 md:w-96 md:h-96 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flame-morphing-ring"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -139,7 +202,7 @@
         <div class="container">
           <h2 class="section-title pb-4 mb-16 text-4xl">Serviços</h2>
           
-          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[900px] mx-auto justify-items-center">
+          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="card group services-box hover:shadow-[0_0_15px_#ff4500] hover:-translate-y-2 hover:border-[#ff6500] transition-all duration-300 ease-out flex flex-col items-center text-center mx-auto">
               <div class="mb-6 text-primary-500 group-hover:text-primary-400 transition-colors">
                 <i data-lucide="layers" class="w-9 h-9"></i>
@@ -220,12 +283,12 @@
         <div class="container">
           <h2 class="section-title pb-4 mb-16 text-4xl">Projetos</h2>
           
-          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1000px] justify-items-center mx-auto">
+          <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="card overflow-hidden group h-full flex flex-col">
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/bi.jpg" alt="Site Bikcraft" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/Bikcraft/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -240,13 +303,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">CSS</span>
-                
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Next.js</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Tailwind CSS</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Stripe</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/Bikcraft/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -255,7 +318,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/forest.jpg" alt="Site Forest" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/Forest/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -270,13 +333,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Next.js</span>
                 <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Tailwind CSS</span>
-        
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Stripe</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/Forest/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project1" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -285,7 +348,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/dogs.jpg" alt="Site Dogs" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/Dogs/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project2" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -301,12 +364,12 @@
               
               <div class="flex flex-wrap gap-2 mt-2">
                 <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
-                
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">CSS</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">TypeScript</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">D3.js</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Firebase</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/Dogs/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project2" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -315,7 +378,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/ani.jpg" alt="Site Animais Fantásticos" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/Animais/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -330,13 +393,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
-                
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Redux</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Firebase</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Material UI</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/Animais/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project3" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -345,7 +408,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/novushaus.jpg" alt="Site NovusHaus" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/NovusHaus/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project4" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -360,12 +423,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Next.js</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">MDX</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Tailwind CSS</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Vercel</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/NovusHaus/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project4" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -374,7 +438,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/dec...jpg" alt="Landing Page" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/decbase/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project5" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -389,12 +453,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">JavaScript</span>
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Weather API</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Geolocation</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">PWA</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/decbase/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project5" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -403,7 +468,7 @@
               <div class="relative overflow-hidden rounded-lg mb-4">
                 <img src="assets/sge.jpg" alt="Site Nexora" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                 <div class="absolute inset-0 bg-primary-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <a href="https://renan-dev-dev.github.io/Nexora/" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <a href="https://example.com/project6" target="_blank" rel="noopener noreferrer" class="bg-background-dark p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <i data-lucide="external-link" class="w-5 h-5 text-white"></i>
                   </a>
                 </div>
@@ -418,12 +483,13 @@
               </p>
               
               <div class="flex flex-wrap gap-2 mt-2">
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Html</span>
-                
-                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Css</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">React</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Framer Motion</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Tailwind CSS</span>
+                <span class="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-400">Netlify</span>
               </div>
               
-              <a href="https://renan-dev-dev.github.io/Nexora/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
+              <a href="https://example.com/project6" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors">
                 Ver projeto <i data-lucide="external-link" class="w-4 h-4 ml-1"></i>
               </a>
             </div>
@@ -502,22 +568,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black/80 py-10 mt-10 ">
-      <div class="container px-36">
-        <div class="flex flex-col md:flex-row justify-between items-center mx-32">
+    <footer class="bg-gray-900/70 py-10 mt-10">
+      <div class="container">
+        <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0">
             <div class="text-xl font-bold mb-2">
               <span class="text-white">Renan</span>
-              <span class="text-primary-500"> | Dev</span>
+              <span class="gradient-pipe"> | Dev</span>
             </div>
             <p class="text-gray-400">Desenvolvedor Frontend</p>
           </div>
           
           <div class="flex space-x-4 mb-6 md:mb-0">
-            <a href="https://github.com/renan-dev-dev" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
               <i data-lucide="github" class="w-5 h-5"></i>
             </a>
-            <a href="https://www.linkedin.com/in/renan-felizardo/" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon text-gray-400 hover:text-primary-500 transition-colors p-2">
               <i data-lucide="linkedin" class="w-5 h-5"></i>
             </a>
           </div>
@@ -542,6 +608,7 @@
     <script src="js/animations.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/morphing-selector.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -5,10 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   Utils.initScrollToTop();
   
   // Initialize all components
-  new ParticleBackground();
   new Navbar();
   new ScrollAnimations();
   new ContactForm();
+  
+  // Initialize Stardust Particles background
+  new ParticleBackground();
+  
+  // Initialize Morphing Selector
+  new MorphingSelector();
   
   // Initialize hero animations after a short delay
   Utils.initHeroAnimations();
