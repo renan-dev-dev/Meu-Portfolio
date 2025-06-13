@@ -188,13 +188,27 @@
 .tela-grande{
   margin-top: 0;
   margin-bottom: 0;
+
 }
 }
 
 
-@media (min-width: 825px) and (max-width: 1180px){
-  .tela-grande{
-  margin-top: 0;
-  margin-bottom: 0;
+@media (min-width: 1020px) and (max-width: 1180px) {
+  
+.fade-in-left1 {
+    font-size: 3rem !important;
+    margin-left: 70px !important;
+    margin-right: 30px;
+    
+  }
+  
+.btn-left1 {
+   
+    margin-left: 70px !important;
+    margin-right: 30px;
+    
+  }
+  
+  
 }
-}
+

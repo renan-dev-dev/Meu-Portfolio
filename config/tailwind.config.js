@@ -19,6 +19,7 @@ tailwind.config = {
           dark: '#0F172A',
           light: '#1E293B',
         }
+        
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -59,3 +60,4 @@ tailwind.config = {
     },
   },
 }
+
