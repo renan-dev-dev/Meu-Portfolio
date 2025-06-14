@@ -228,3 +228,34 @@ margin-bottom: 20px;
     font-size: 1rem;
   }
 }
+/* Para telas grandes (desktop) - diminuir texto laranja */
+@media (min-width: 1024px) {
+  .fade-in-left h2 {
+    font-size: 3.5rem !important; /* ou o tamanho que você quiser */
+  }
+}
+
+@media (min-width: 1024px) {
+  .fade-in-left3 {
+    padding-left: 5rem !important; /* 80px */
+  }
+
+  .sobre-mim p {
+    font-size: 1.125rem !important; /* text-lg */
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  
+}
+
+/* Para telas muito grandes */
+@media (min-width: 1400px) {
+  .fade-in-left3 {
+    padding-left: 8rem !important; /* 128px */
+  }
+
+  .sobre-mim p {
+    font-size: 1.25rem !important; /* text-xl */
+  }
+}
